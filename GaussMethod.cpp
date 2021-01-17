@@ -34,24 +34,27 @@ int main(){
 		for(int i=A; i<=A; i++){
 			for(int j=A; j<n; j++){
 				a[i][j]=a[i][j]/p;
-				gotoxy(k,l);	cout<< a[i][j];
-				k=k+8;
 			}
-			k=4;
-			l++;
 		}
 		for(int i=B; i<m; i++){
 			c=a[A+B][A];
 			for(int j=0; j<n; j++){
 				a[i][j]=a[i][j]-c*a[A][j];
-				gotoxy(k,l);	cout<< a[i][j];
-				k=k+8;
 			}
 			k=4;
 			l++;
 			B++;
 		}
+		for(int i=0; i<m; i++){
+			for(int j=0; j<n; j++){
+				gotoxy(k,l);	cout<< a[i][j];
+				k=k+8;
+			}
+			k=4;
+			l++;
+		}
 		A++;
+		l++;
 	}while(A<m);
 	return 0;
 }
